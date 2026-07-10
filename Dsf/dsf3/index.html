@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Moedas</title>
+    <link rel="stylesheet" href="stilo1.css">
+</head>
+<body>
+    <main>
+        <h1>Cambio de Moedas</h1>
+        <form action="conv.php" method="get">
+            <label for="valor">Valor em Reais (R$)</label>
+            <input type="number" name="valor" id="valor" step="0.01">
+            <label for="moeda">Escolha a moeda:</label>
+            <select name="moeda" id="moeda">
+                <option value="dolar">Dólar (USD)</option>
+                <option value="euro">Euro (EUR)</option>
+                <option value="libra">Libra Esterlina (GBP)</option>
+            <input type="submit" value="Converter">
+        </form>
+    
+</body>
+</html>
