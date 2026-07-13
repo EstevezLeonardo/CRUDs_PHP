@@ -52,10 +52,10 @@
                     echo  "O valor convertido na moeda escolhida é <strong> " . numfmt_format_currency($padrao, $valfinal, "USD") . "</strong>.";
                     break;
                 case "euro":
-                    echo "O valor convertido na moeda ecolhida é <strong> " . numfmt_format_currency($padrao, $valfinal, "EUR") . "</strong>.";
+                    echo "O valor convertido na moeda escolhida é <strong> " . numfmt_format_currency($padrao, $valfinal, "EUR") . "</strong>.";
                     break;
                 case "libra":
-                    echo "O valor convertido na moeda ecolhida é <strong> " . numfmt_format_currency($padrao, $valfinal, "GBP") . "</strong>.";
+                    echo "O valor convertido na moeda escolhida é <strong> " . numfmt_format_currency($padrao, $valfinal, "GBP") . "</strong>.";
                     break;}
                 ?>
         </p>
