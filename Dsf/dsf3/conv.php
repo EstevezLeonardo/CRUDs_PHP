@@ -14,23 +14,23 @@
                 // Obtendo a cotação do dólar, euro e libra
 
                 // Definindo o intervalo de datas para a cotação
-                $iniciodol = date("d/m/Y", strtotime("-7 days"));  
-                $fimdol = date("d/m/Y");
+                $iniciodol = date("m/d/Y", strtotime("-7 days"));  
+                $fimdol = date("m/d/Y");
                 // URL para obter a cotação do dólar
                 $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\''. $iniciodol.'\'&@dataFinalCotacao=\''. $fimdol . '\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
                 // Fazendo a requisição e decodificando o JSON retornado
                 $dadosdol = json_decode(file_get_contents($url), true);   
                 $cotacaodol = $dadosdol["value"][0]["cotacaoCompra"];
                 
-                $inicioeur = date("d/m/Y", strtotime("-7 days"));  
-                $fimeur = date("d/m/Y");
+                $inicioeur = date("m/d/Y", strtotime("-7 days"));  
+                $fimeur = date("m/d/Y");
                 // URL para obter a cotação do euro
                 $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaPeriodo(moeda=@moeda,dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@moeda=\'EUR\'&@dataInicial=\''.$inicioeur.'\'&@dataFinalCotacao=\''. $fimeur . '\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
                 $dadoseur = json_decode(file_get_contents($url), true);
                 $cotacaoeur = $dadoseur["value"][0]["cotacaoCompra"];
                 
-                $iniciolibra = date("d/m/Y", strtotime("-7 days"));  
-                $fimlibra = date("d/m/Y");
+                $iniciolibra = date("m/d/Y", strtotime("-7 days"));  
+                $fimlibra = date("m/d/Y");
                 // URL para obter a cotação da libra
                 $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaPeriodo(moeda=@moeda,dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@moeda=\'GBP\'&@dataInicial=\''. $iniciolibra.'\'&@dataFinalCotacao=\''. $fimlibra . '\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
                 $dadoslibra = json_decode(file_get_contents($url), true);
