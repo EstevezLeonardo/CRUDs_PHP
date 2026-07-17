@@ -37,7 +37,8 @@
                 $cotacaolibra = $dadoslibra["value"][0]["cotacaoCompra"];
                 
                 // Obtendo o valor informado pelo usuário e a moeda escolhida
-                $real = empty($_GET["valor"]) ? 0 : $_GET["valor"];
+                //operador de coalescência nula (?:) para atribuir 0 caso o valor não seja fornecido
+                $real = $_GET["valor"] ?: 0;
                 $moeda = $_GET["moeda"];
                 $dolar = $cotacaodol;
                 $euro = $cotacaoeur;             

@@ -11,7 +11,8 @@
         <h1>Resultado do Cálculo</h1>
         <p>
             <?php 
-                $n = empty($_GET["num"]) ? 0 : $_GET["num"];
+            //operador de coalescência nula (?:) para atribuir 0 caso o valor não seja fornecido
+                $n = $_GET["num"] ?: 0;
                 $a = $n - 1;
                 $s = $n + 1;
                 echo "O número informado foi <strong>$n</strong>.<br>";
